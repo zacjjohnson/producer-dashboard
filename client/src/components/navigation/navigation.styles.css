@@ -1,0 +1,13 @@
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,12 @@
+
+.sign-in-container {
+    border: 1px solid black;
+    
+}
+
+.sign-in-container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+}
