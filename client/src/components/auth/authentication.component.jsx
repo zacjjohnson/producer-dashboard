@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import SignIn from "./sign-in.components";
+import SignUp from "./sign-up.component";
 
 const Authentication = () => {
     return (
@@ -12,6 +13,7 @@ const Authentication = () => {
 
             <div className="sign-up">
 
+            <SignUp />
             </div>
 
             

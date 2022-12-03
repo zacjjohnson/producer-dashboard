@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../'
+import { AuthContext } from '../../context/auth.context';
 import './navigation.styles.css'
 
 
@@ -16,9 +16,12 @@ const Navigation = () => {
                 HOME
             </Link>
 
+            {isLoggedIn && (
+
             <Link to='/beats' className='nav-links'>
                 BEATS
             </Link>
+            )}
 
             {!isLoggedIn && (
 
