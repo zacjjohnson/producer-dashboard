@@ -1,10 +1,15 @@
 import React from 'react';
-
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../'
 import './navigation.styles.css'
 
 
 const Navigation = () => {
+
+    const { isLoggedIn, user } = useContext(AuthContext);
+
+
     return (
         <div className='navigation'>
             <Link to='/' className='nav-links'>
@@ -15,9 +20,13 @@ const Navigation = () => {
                 BEATS
             </Link>
 
+            {!isLoggedIn && (
+
             <Link to='/auth' className='nav-links'>
                 SIGN IN
             </Link>
+            
+            )}
         </div>
     )
 }

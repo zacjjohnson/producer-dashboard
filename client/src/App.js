@@ -3,12 +3,23 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/navigation/navigation.component';
 import Authentication from './components/auth/authentication.component';
 import Beats from './components/beats/beats.component';
-// import { useState } from 'react';
+import { useEffect, useState } from 'react'
+import axios from 'axios';
 
 
 
 
 function App() {
+
+  useEffect(() => {
+    axios.get('http://localhost:5005/api')
+    .then((response) => {
+      console.log(response);
+
+    })
+  }, [] ); 
+
+  
   return (
     
     <div className="App">
