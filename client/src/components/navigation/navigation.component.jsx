@@ -7,7 +7,10 @@ import './navigation.styles.css'
 
 const Navigation = () => {
 
-    const { isLoggedIn, user } = useContext(AuthContext);
+    const { isLoggedIn, 
+        user, 
+        logOutUser 
+    } = useContext(AuthContext);
 
 
     return (
@@ -17,10 +20,14 @@ const Navigation = () => {
             </Link>
 
             {isLoggedIn && (
-
+            <>
             <Link to='/beats' className='nav-links'>
                 BEATS
             </Link>
+
+            <button onClick={logOutUser}>Logout</button>
+            <span>{user && user.name}</span>
+            </>
             )}
 
             {!isLoggedIn && (

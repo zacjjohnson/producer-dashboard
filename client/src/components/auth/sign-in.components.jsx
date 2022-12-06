@@ -16,7 +16,7 @@ const SignIn = () => {
     const { email, password } = formFields;
     const [errorMessage, setErrorMessage] = useState(undefined);
 
-    const { storeToken } = useContext(AuthContext);
+    const { storeToken, authenticateUser } = useContext(AuthContext);
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -39,6 +39,8 @@ const SignIn = () => {
             console.log('JWT token', response.data.authToken);
 
             storeToken(response.data.authToken);
+
+            authenticateUser();
 
             navigate('/');
 
