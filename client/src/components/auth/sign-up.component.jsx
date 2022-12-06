@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const API_URI = "http://localhost:5005";
@@ -28,6 +28,8 @@ const SignUp = () => {
         setFormFields(defaultFormFields);
       }; 
 
+    const navigate = useNavigate();
+
 
     const handleSignUpSubmit = (event) => {
         event.preventDefault();
@@ -35,7 +37,7 @@ const SignUp = () => {
 
         axios.post(`${API_URI}/auth/signup`, requestBody)
         .then((response) => {
-            Navigate('/login');
+            navigate('/');
             resetFormFields();
         })
         .catch((error) => {

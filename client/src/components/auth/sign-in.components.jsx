@@ -1,5 +1,10 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../auth/sign-in.styles.css';
+import { AuthContext } from '../../context/auth.context';
+
+const API_URL = "http://localhost:5005";
 
     const defaultFormFields = {
         email: '',
@@ -9,6 +14,9 @@ import '../auth/sign-in.styles.css';
 const SignIn = () => {
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { email, password } = formFields;
+    const [errorMessage, setErrorMessage] = useState(undefined);
+
+    const { storeToken } = useContext(AuthContext);
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -19,9 +27,31 @@ const SignIn = () => {
         console.log(value)
         setFormFields({ ...formFields, [name]: value });
     };
+
+    const navigate = useNavigate();
+
+    const handleLoginSubmit = (event) => {
+        event.preventDefault();
+        const requestBody = { email, password };
+        
+        axios.post(`${API_URL}/auth/login`, requestBody)
+        .then((response) => {
+            console.log('JWT token', response.data.authToken);
+
+            storeToken(response.data.authToken);
+
+            navigate('/');
+
+            resetFormFields();
+
+        }).catch((error) => {
+            const errorDescription = error.response.data.message;
+            setErrorMessage(errorDescription);
+        })
+    }
     return (
         <div className="sign-in-container">
-            <form>
+            <form onSubmit={handleLoginSubmit}>
                 <label>
                     Email:
                 </label>
@@ -34,6 +64,7 @@ const SignIn = () => {
 
                 <button>Sign In</button>
             </form>
+            { errorMessage && <p className="error-message">{errorMessage}</p> }
         </div>
     )
 }
