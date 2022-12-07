@@ -6,11 +6,23 @@
     height: 500px;
     padding: 3rem;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
     margin: 2rem;
+    text-align: center;
+    background-color: lightgrey;
+
 }
 
 img {
     width: 10vw;
     border-radius: 75px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+.home-page h3 {
+    text-decoration: underline;
 }

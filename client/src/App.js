@@ -38,8 +38,10 @@ function App() {
           <Route path='/beats' element={ <Beats /> } />
       </Routes>
       
-    
-      <HomePage />
+    <Routes>
+      <Route path='/' element={ <HomePage /> } />
+      
+    </Routes>
       
     </div>
 
