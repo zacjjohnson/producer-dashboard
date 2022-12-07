@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: space-around;
     color: white;
+    padding-bottom: 5rem;
 }
 
 .nav-links {

@@ -26,7 +26,7 @@ const Navigation = () => {
             </Link>
 
             <button onClick={logOutUser}>Logout</button>
-            <span>{user && user.name}</span>
+            
             </>
             )}
 

@@ -5,11 +5,19 @@ import Authentication from './components/auth/authentication.component';
 import Beats from './components/beats/beats.component';
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import HomePage from './components/homePage/homePage.component';
+// import { Dropbox } from 'dropbox';
 
+// const dbx = new Dropbox({ accessToken: process.env.DROPBOXAPI});
+
+// console.log(dbx)
 
 
 
 function App() {
+
+  // const button = Dropbox.createChooseButton(options);
+  //     document.getElementById("container").appendChild(button);
 
   useEffect(() => {
     axios.get('http://localhost:5005/api')
@@ -29,6 +37,9 @@ function App() {
           <Route path='/auth' element={ <Authentication /> } />
           <Route path='/beats' element={ <Beats /> } />
       </Routes>
+      
+    
+      <HomePage />
       
     </div>
 

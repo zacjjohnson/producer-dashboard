@@ -1,0 +1,16 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 250px;
+    height: 500px;
+    padding: 3rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 2rem;
+}
+
+img {
+    width: 10vw;
+    border-radius: 75px;
+}
