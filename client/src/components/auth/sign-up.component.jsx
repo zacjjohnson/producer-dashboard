@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './sign-up.styles.css'
 
 const API_URI = "http://localhost:5005";
 
@@ -47,37 +48,36 @@ const SignUp = () => {
     }  
 
     return (
-        <div>
+        <>
+        
+        <div className='sign-up-container'>
 
             <form onSubmit={handleSignUpSubmit}>
-                    <label>
-                        Name:
-                    </label>
+                    
                     <input 
                     type='text' 
                     className='input-form' 
                     name='name' 
+                    placeholder='Name'
                     value={name} 
                     onChange={handleChange}
                     />
     
-                    <label>
-                        Email:
-                    </label>
+                    
                     <input 
                     type="text" 
                     className="input-form" 
                     name="email" 
+                    placeholder='Email'
                     value={email} 
                     onChange={handleChange}
                     />
     
-                    <label>
-                        Password:
-                    </label>
+                    
                     <input 
                     type="password" 
                     name="password" 
+                    placeholder='Password'
                     className="input-form" 
                     value={password} 
                     onChange={handleChange} 
@@ -86,11 +86,13 @@ const SignUp = () => {
                     <button type='submit'>Sign In</button>
                 </form>
     
-    
-            <p>Already have account?</p>
-            <Link to={"/login"}> Login</Link>
 
         </div>
+
+            <p>Already have account?</p>
+            <Link to={"/login"}> Login</Link>
+        </>
+
     )
 }
 

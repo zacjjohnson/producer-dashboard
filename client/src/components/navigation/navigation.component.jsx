@@ -31,11 +31,16 @@ const Navigation = () => {
             )}
 
             {!isLoggedIn && (
+            <>
+                <Link to='/signup' className='nav-links'>
+                SIGN UP
+                </Link>
+                
+                <Link to='/login' className='nav-links'>
+                    SIGN IN
+                </Link>
 
-            <Link to='/auth' className='nav-links'>
-                SIGN IN
-            </Link>
-            
+            </>
             )}
         </div>
     )

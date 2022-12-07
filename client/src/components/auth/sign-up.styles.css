@@ -1,5 +1,4 @@
-
-.sign-in-container {
+.sign-up-container {
     display: flex;
     justify-content: center;
     
@@ -8,7 +7,7 @@
     
 }
 
-.sign-in-container form {
+.sign-up-container form {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -17,7 +16,7 @@
     border-radius: 2%;
 }
 
-.sign-in-container button {
+.sign-up-container button {
     border-radius: 3px;
     border: 1px solid black;
     padding: 10px;
@@ -28,7 +27,7 @@
     margin-top: 15px;
 }
 
-.sign-in-container input {
+.sign-up-container input {
     border-radius: 3px;
     border: 1px solid black;
     margin: 1rem;

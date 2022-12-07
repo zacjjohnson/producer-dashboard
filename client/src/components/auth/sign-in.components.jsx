@@ -54,15 +54,11 @@ const SignIn = () => {
     return (
         <div className="sign-in-container">
             <form onSubmit={handleLoginSubmit}>
-                <label>
-                    Email:
-                </label>
-                <input type="text" className="input-form" name="email" value={email} onChange={handleChange}/>
+            
+                <input type="text" placeholder='Email' className="input-form" name="email" value={email} onChange={handleChange}/>
 
-                <label>
-                    Password:
-                </label>
-                <input type="password" name="password" className="input-form" value={password} onChange={handleChange} />
+                
+                <input type="password" placeholder='password' name="password" className="input-form" value={password} onChange={handleChange} />
 
                 <button>Sign In</button>
             </form>

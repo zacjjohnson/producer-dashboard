@@ -7,19 +7,13 @@ const Authentication = () => {
     return (
         <Fragment>
             <div className="sign-in">
-
-            <SignIn />
+                <SignIn />
             </div>
 
             <div className="sign-up">
-
-            <SignUp />
+                <SignUp />
             </div>
-
-            
-            
             <Outlet />
-
         </Fragment>
     )
 }

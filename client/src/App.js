@@ -1,11 +1,12 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/navigation/navigation.component';
-import Authentication from './components/auth/authentication.component';
 import Beats from './components/beats/beats.component';
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import HomePage from './components/homePage/homePage.component';
+import SignIn from './components/auth/sign-in.components';
+import SignUp from './components/auth/sign-up.component';
 // import { Dropbox } from 'dropbox';
 
 // const dbx = new Dropbox({ accessToken: process.env.DROPBOXAPI});
@@ -34,7 +35,8 @@ function App() {
       <h1 className='main-head-container'>Producer Dashboard</h1>
         <Navigation />
       <Routes>
-          <Route path='/auth' element={ <Authentication /> } />
+          <Route path='/login' element={ <SignIn /> } />
+          <Route path='/signup' element={ <SignUp /> } />
           <Route path='/beats' element={ <Beats /> } />
       </Routes>
       
