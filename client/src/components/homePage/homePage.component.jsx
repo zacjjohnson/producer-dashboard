@@ -35,7 +35,6 @@ const artistsWorkedWith = [
 
 const HomePage = () => {
 
-
     return (
         <div className="home-page">
             <div className='image'>
@@ -45,6 +44,9 @@ const HomePage = () => {
             <p>Orlando, Fl</p>
             <p>Artists worked with:</p>
             <Artist artists={artistsWorkedWith} />
+            <div className='home-page-content'>
+                
+            </div>
         </div>
     )
 }
