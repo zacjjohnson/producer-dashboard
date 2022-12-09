@@ -7,11 +7,12 @@ import axios from 'axios';
 import HomePage from './components/homePage/homePage.component';
 import SignIn from './components/auth/sign-in.components';
 import SignUp from './components/auth/sign-up.component';
-// import { Dropbox } from 'dropbox';
 
-// const dbx = new Dropbox({ accessToken: process.env.DROPBOXAPI});
+import IsPrivate from './components/IsPrivate';
+import IsAnon from './components/IsAnon';
 
-// console.log(dbx)
+
+
 
 
 
@@ -35,15 +36,23 @@ function App() {
       <h1 className='main-head-container'>Producer Dashboard</h1>
         <Navigation />
       <Routes>
-          <Route path='/login' element={ <SignIn /> } />
-          <Route path='/signup' element={ <SignUp /> } />
-          <Route path='/beats' element={ <Beats /> } />
+          <Route 
+          path='/login' 
+          element={ <IsAnon> <SignIn /> </IsAnon>  } />
+          <Route 
+          path='/signup' 
+          element={ <IsAnon> <SignUp /> </IsAnon>  } />
+          <Route 
+          path='/beats' 
+          element={ <IsPrivate> <Beats /> </IsPrivate>  } />
       </Routes>
       
     <Routes>
       <Route path='/' element={ <HomePage /> } />
       
     </Routes>
+
+    
       
     </div>
 
