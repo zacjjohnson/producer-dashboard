@@ -1,13 +1,48 @@
 .dropbox-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid black;
     background-color: white;
     color: #0060FF;
     border-radius: 3px;
-    width: 20vw;
+    width: 15vw;
+    height: 5vw;
+    padding: 1rem;
 }
 
 .dropbox-logo {
+    /* display: flex;
+    flex-direction: row; */
+    width: 2vw;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    padding-top: 20rem;
+}
+
+.beats-info-boxes {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+.beat-box {
     display: flex;
     flex-direction: column;
-    width: 2vw;
+    padding: 1rem;
+    border: 1px solid black;
+    width: 20vw;
+    margin: 2rem;
+}
+
+.beat-box button {
+    border: 1px solid black;
+    border-radius: 2px;
+    
 }
