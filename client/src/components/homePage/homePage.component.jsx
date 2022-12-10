@@ -3,7 +3,8 @@ import './homePage.styles.css'
 import Artist from '../artists/artists.component';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
-import { useState } from 'react';
+
+// import { useState } from 'react';
 
 
 
@@ -35,10 +36,7 @@ const artistsWorkedWith = [
     }
 ]
 
-// const defaultHomePage = {
-//     name: "Your Name Here",
 
-// }
 
 
 const HomePage = () => {
@@ -46,34 +44,58 @@ const HomePage = () => {
     const { isLoggedIn, user } = useContext(AuthContext);
     console.log(user)
 
-    // const []
+    if(user){
 
+        const { name, location } = user;
+        return (
+            <div className="home-page">
+                <div className='homepage-content-box'>
 
-    return (
-        <div className="home-page">
-            {isLoggedIn && (
-                <>
-                <div className='image'>
-                    <img src={profileImage} alt="profile" />
+                {isLoggedIn && (
+                    <>
+                    <div className='image'>
+                        <img src={profileImage} alt="profile" />
+                    </div>
+                    <h3>{name}</h3>
+                    <h4>{location}</h4>
+                    <p>Artists worked with:</p>
+                    <Artist artists={artistsWorkedWith} />
+                    
+                    </>
+                )}
                 </div>
-                <h3>{user.name}</h3>
-                <p>{user.location}</p>
-                <p>Artists worked with:</p>
-                <Artist artists={artistsWorkedWith} />
-                
-                </>
-            )}
+    
+    
+                <div className='homepage-image'>
 
-            {!isLoggedIn && (
-                <>
-                <h1>Please Login to upload your information</h1>
-                </>
-            )}
-            <div className='home-page-content'>
-                
+                {/* <img src="https://i.imgur.com/Pco2vPH.jpg" title="source: imgur.com"  alt=''/> */}
             </div>
-        </div>
-    )
+            </div>
+        )
+    } else {
+        return (
+            <>
+            <div className="home-page">
+                <div className='homepage-content-box'>
+
+                {!isLoggedIn && (
+                    <>
+                    <h1>Please Login to upload your information</h1>
+                    </>
+                )}
+                </div>
+    
+            <div className='homepage-image'>
+
+                {/* <img src="https://i.imgur.com/Pco2vPH.jpg" title="source: imgur.com" /> */}
+            </div>
+            </div>
+
+            </>
+        )
+    }
+    
+
 }
 
 

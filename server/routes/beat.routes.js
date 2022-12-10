@@ -19,6 +19,7 @@ router.post('/beats', (req, res, next) => {
         return Beat.create({ name, link });
     })
     .then((createdBeat) => {
+      console.log({BEAT: createdBeat})
       const { name, link } = createdBeat;
     
       const beat = { name, link };

@@ -2,12 +2,12 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/navigation/navigation.component';
 import Beats from './components/beats/beats.component';
-import { useEffect, useState } from 'react'
+import { useEffect, useContext } from 'react'
 import axios from 'axios';
 import HomePage from './components/homePage/homePage.component';
 import SignIn from './components/auth/sign-in.components';
 import SignUp from './components/auth/sign-up.component';
-
+import { AuthContext } from './context/auth.context';
 import IsPrivate from './components/IsPrivate';
 import IsAnon from './components/IsAnon';
 
@@ -18,8 +18,9 @@ import IsAnon from './components/IsAnon';
 
 function App() {
 
-  // const button = Dropbox.createChooseButton(options);
-  //     document.getElementById("container").appendChild(button);
+  const { isLoggedIn, user } = useContext(AuthContext);
+    console.log(user)
+
 
   useEffect(() => {
     axios.get('http://localhost:5005/api')
@@ -33,7 +34,13 @@ function App() {
   return (
     
     <div className="App">
-      <h1 className='main-head-container'>Producer Dashboard</h1>
+      {!isLoggedIn && (
+        <h1 className='main-head-container'>Producer Dashboard</h1>
+      )}
+
+      {isLoggedIn && (
+        <h1 className='main-head-container'>{user.name} Dashboard</h1>
+      )}
         <Navigation />
       <Routes>
           <Route 

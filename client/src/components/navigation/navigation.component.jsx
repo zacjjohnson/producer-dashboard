@@ -7,8 +7,7 @@ import './navigation.styles.css'
 
 const Navigation = () => {
 
-    const { isLoggedIn, 
-        user, 
+    const { isLoggedIn,  
         logOutUser 
     } = useContext(AuthContext);
 

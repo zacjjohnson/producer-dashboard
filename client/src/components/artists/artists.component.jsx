@@ -1,4 +1,4 @@
-
+import './artists.styles.css';
 
 
 const Artist = ({ artists }) => {
@@ -7,7 +7,10 @@ const Artist = ({ artists }) => {
         <div className="artists-list">
 
             {artists.map(artist => (
-                <p key={artist.id}>{artist.name}</p>
+                <div className='artists'>
+                    <p key={artist.id}>{artist.name}</p>
+                    <a href='/'>Listen Here</a>
+                </div>
             ))}
 
         </div>

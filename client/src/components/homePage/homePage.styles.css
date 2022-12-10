@@ -1,5 +1,11 @@
 .home-page {
     display: flex;
+    flex-direction: row;
+
+}
+
+.homepage-content-box {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 250px;
@@ -13,7 +19,7 @@
 
 }
 
-img {
+.image img {
     width: 10vw;
     border-radius: 75px;
 }
@@ -27,3 +33,9 @@ img {
     text-decoration: underline;
 }
 
+.homepage-image {
+    padding: 2rem;
+}
+.homepage-image img{
+    width: 55vw;
+}
