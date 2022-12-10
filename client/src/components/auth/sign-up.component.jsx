@@ -8,7 +8,8 @@ const API_URI = "http://localhost:5005";
 const defaultFormFields = {
     name: '',
     email: '',
-    password: ''
+    password: '',
+    location: ''
   };
 
   
@@ -16,7 +17,7 @@ const defaultFormFields = {
 const SignUp = () => {
 
     const [ formFields, setFormFields ] = useState(defaultFormFields);
-    const { name, email, password } = formFields;
+    const { name, location, email, password } = formFields;
 
 
     const handleChange = (event) => {
@@ -34,7 +35,7 @@ const SignUp = () => {
 
     const handleSignUpSubmit = (event) => {
         event.preventDefault();
-        const requestBody = { name, email, password };
+        const requestBody = { name, location, email, password };
 
         axios.post(`${API_URI}/auth/signup`, requestBody)
         .then((response) => {
@@ -60,6 +61,15 @@ const SignUp = () => {
                     name='name' 
                     placeholder='Name'
                     value={name} 
+                    onChange={handleChange}
+                    />
+
+                    <input
+                    type="text"
+                    className='input-form'
+                    name='location'
+                    placeholder='Location'
+                    value={location}
                     onChange={handleChange}
                     />
     

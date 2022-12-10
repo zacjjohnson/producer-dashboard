@@ -1,18 +1,12 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const userSchema = new Schema(
+const beatSchema = new Schema(
   {
-    email: {
-      type: String
-    },
-    password: {
-      type: String
-    },
     name: {
       type: String
     },
-    location: {
+    link: {
       type: String
     }
   },
@@ -22,6 +16,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("User", userSchema);
+const Beat = model("Beat", beatSchema);
 
-module.exports = User;
+module.exports = Beat;

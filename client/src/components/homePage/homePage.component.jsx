@@ -1,6 +1,10 @@
 import profileImage from '../../assets/profile.JPG';
 import './homePage.styles.css'
 import Artist from '../artists/artists.component';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth.context';
+import { useState } from 'react';
+
 
 
 
@@ -31,19 +35,40 @@ const artistsWorkedWith = [
     }
 ]
 
+// const defaultHomePage = {
+//     name: "Your Name Here",
+
+// }
 
 
 const HomePage = () => {
 
+    const { isLoggedIn, user } = useContext(AuthContext);
+    console.log(user)
+
+    // const []
+
+
     return (
         <div className="home-page">
-            <div className='image'>
-                <img src={profileImage} alt="profile" />
-            </div>
-            <h3>Writa Beats</h3>
-            <p>Orlando, Fl</p>
-            <p>Artists worked with:</p>
-            <Artist artists={artistsWorkedWith} />
+            {isLoggedIn && (
+                <>
+                <div className='image'>
+                    <img src={profileImage} alt="profile" />
+                </div>
+                <h3>{user.name}</h3>
+                <p>{user.location}</p>
+                <p>Artists worked with:</p>
+                <Artist artists={artistsWorkedWith} />
+                
+                </>
+            )}
+
+            {!isLoggedIn && (
+                <>
+                <h1>Please Login to upload your information</h1>
+                </>
+            )}
             <div className='home-page-content'>
                 
             </div>

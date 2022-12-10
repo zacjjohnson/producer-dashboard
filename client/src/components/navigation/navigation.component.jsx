@@ -22,7 +22,7 @@ const Navigation = () => {
             {isLoggedIn && (
             <>
             <Link to='/beats' className='nav-links'>
-                BEATS
+                UPLOAD BEATS
             </Link>
 
             <button onClick={logOutUser}>Logout</button>
