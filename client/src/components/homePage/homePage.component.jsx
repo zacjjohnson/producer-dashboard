@@ -42,11 +42,12 @@ const artistsWorkedWith = [
 const HomePage = () => {
 
     const { isLoggedIn, user } = useContext(AuthContext);
-    console.log(user)
+    
 
     if(user){
 
         const { name, location } = user;
+        console.log(name, location);
         return (
             <div className="home-page">
                 <div className='homepage-content-box'>
@@ -57,7 +58,6 @@ const HomePage = () => {
                         <img src={profileImage} alt="profile" />
                     </div>
                     <h3>{name}</h3>
-                    <h4>{location}</h4>
                     <p>Artists worked with:</p>
                     <Artist artists={artistsWorkedWith} />
                     
@@ -95,7 +95,6 @@ const HomePage = () => {
         )
     }
     
-
 }
 
 

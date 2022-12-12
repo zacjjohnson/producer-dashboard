@@ -9,7 +9,6 @@ const Artist = ({ artists }) => {
             {artists.map(artist => (
                 <div className='artists'>
                     <p key={artist.id}>{artist.name}</p>
-                    <a href='/'>Listen Here</a>
                 </div>
             ))}
 

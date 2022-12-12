@@ -39,6 +39,7 @@ const SignUp = () => {
 
         axios.post(`${API_URI}/auth/signup`, requestBody)
         .then((response) => {
+            console.log(response)
             navigate('/');
             resetFormFields();
         })
