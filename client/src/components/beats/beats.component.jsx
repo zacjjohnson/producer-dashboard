@@ -2,9 +2,11 @@
 import { useDropboxChooser } from 'use-dropbox-chooser';
 import './beats.styles.css';
 import dropboxLogo from '../../assets/Dropbox_Icon.svg.png';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/auth.context';
+
 
 const API_URL = "http://localhost:5005";
 
@@ -15,12 +17,15 @@ function Beats() {
     name: '',
     link: '',
   };
-      
+    const { user, storedToken } = useContext(AuthContext); 
     const [ beatsFromDropbox, setBeatsFromDropbox ] = useState(defaultFormFields);
     const [ errorMessage, setErrorMessage ] = useState(undefined);
     const navigate = useNavigate();
     const { name, link} = beatsFromDropbox;
 
+    // axios.get(`${API_URL}/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}`} }).then((result) => {
+    //   console.log(result)
+    // })
 
     const resetBeatsFromDropbox = () => {
       beatsFromDropbox(defaultFormFields);
@@ -39,11 +44,11 @@ function Beats() {
       },
     });
 
+    console.log(user)
    
     const handleBeatSubmit = (event) => {
       event.preventDefault();
-      const requestBody = { name, link };
-        
+      const requestBody = { name, link, user: user._id };
         axios.post(`${API_URL}/beats`, requestBody)
         .then((response) => {
             console.log(response)

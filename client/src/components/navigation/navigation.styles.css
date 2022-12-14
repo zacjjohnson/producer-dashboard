@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: space-around;
     padding-bottom: 5rem;
+    padding-top: 2rem;
 }
 
 .nav-links {

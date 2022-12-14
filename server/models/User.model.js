@@ -14,8 +14,12 @@ const userSchema = new Schema(
     },
     location: {
       type: String
-    }
-  },
+    },
+    beats: [{
+      type: Schema.Types.ObjectId,
+      ref: "Beat"
+    }]
+  },   
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,

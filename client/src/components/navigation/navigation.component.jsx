@@ -24,6 +24,10 @@ const Navigation = () => {
                 UPLOAD BEATS
             </Link>
 
+            <Link to='/profile' className='nav-links'>
+                    PROFILE
+                </Link>
+
             <button onClick={logOutUser}>Logout</button>
             
             </>

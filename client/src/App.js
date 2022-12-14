@@ -10,7 +10,7 @@ import SignUp from './components/auth/sign-up.component';
 import { AuthContext } from './context/auth.context';
 import IsPrivate from './components/IsPrivate';
 import IsAnon from './components/IsAnon';
-
+import Profile from './components/profile/profile.component';
 
 
 
@@ -34,13 +34,13 @@ function App() {
   return (
     
     <div className="App">
-      {!isLoggedIn && (
+      {/* {!isLoggedIn && (
         <h1 className='main-head-container'>Producer Dashboard</h1>
       )}
 
       {isLoggedIn && (
         <h1 className='main-head-container'>{user.name} Dashboard</h1>
-      )}
+      )} */}
         <Navigation />
       <Routes>
           <Route 
@@ -52,6 +52,10 @@ function App() {
           <Route 
           path='/beats' 
           element={ <IsPrivate> <Beats /> </IsPrivate>  } />
+
+          <Route 
+          path='/profile'
+          element={ <IsPrivate> <Profile /> </IsPrivate> } />
       </Routes>
       
     <Routes>
