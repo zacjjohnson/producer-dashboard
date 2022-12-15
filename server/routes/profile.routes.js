@@ -14,63 +14,26 @@ let userId = {};
 router.post('/profile', (req, res, next) => {
   userId = req.body.user;
   console.log({HELLLLLLO: userId})
+  return req;
 })
-
-
 
 
 router.get('/profile', (req, res, next) => {
 
-  User.findById(userId)
-  .populate('beats')
-  .then((user) => {
-    if (!user) {
-      // Return an error if the user is not found
-      return res.status(404).json({ error: 'User not found' });
-    }
-    console.log({ beats: user.beats })
-    // Return the beats associated with the user in the response
-    res.json({ beats: user.beats });
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-  
-    Beat.find()
-      .then((beats) => {
-        if (!beats) {
-          // Return an error if the beat is not found
-          return res.status(404).json({ error: 'Beat not found' });
-        }
-        console.log({ THISONE: beats })
-        // Return the beat object in the response
-        res.json({ beats });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-})
-
-
-
-// router.get('/profile', (req, res, next) => {
-//     const { id } = req.params;
-  
-//     // Find the beat with the specified ID
-//     Beat.findById(id)
-//       .then((beat) => {
-//         if (!beat) {
-//           // Return an error if the beat is not found
-//           return res.status(404).json({ error: 'Beat not found' });
-//         }
-  
-//         // Return the beat object in the response
-//         res.json({ beat });
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   });
-
+    User.findById(userId)
+    .populate('beats')
+    .exec((err, user) => {
+      if (err) {
+        // Handle the error and send a response if there is one
+        res.status(500).send(err);
+      } else {
+        // Get the list of beats for this user
+        const beats = user.beats;
+        console.log({beats: beats})
+        // Send the list of beats as a response
+        res.json({beats: beats});
+      }
+    });
+});
 
 module.exports = router;

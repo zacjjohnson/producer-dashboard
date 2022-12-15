@@ -1,0 +1,42 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+    padding: 1rem;
+}
+
+.user-profile {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    width: 100vw;
+}
+
+
+
+.beats-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    border: 1px solid black;
+}
+
+.uploaded-beats {
+    padding: 2rem;
+    
+}
+
+
+/* .user-profile {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 2rem;
+}
+
+
+
+
+
+
+ */

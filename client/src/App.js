@@ -19,13 +19,13 @@ import Profile from './components/profile/profile.component';
 function App() {
 
   const { isLoggedIn, user } = useContext(AuthContext);
-    console.log(user)
+   
 
 
   useEffect(() => {
     axios.get('http://localhost:5005/api')
     .then((response) => {
-      console.log(response);
+      // console.log(response);
 
     })
   }, [] ); 

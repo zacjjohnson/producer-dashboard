@@ -37,6 +37,7 @@ function Beats() {
       appKey: 'voxbiyjxw9yt7tk',
       chooserOptions: { multiple: true, linkType: 'direct', multiselect: true },
       onSelected: files => {
+        console.log(files)
         const [ { name, link } ] = files
         setBeatsFromDropbox({name, link});
         console.log(files)
@@ -44,7 +45,6 @@ function Beats() {
       },
     });
 
-    console.log(user)
    
     const handleBeatSubmit = (event) => {
       event.preventDefault();
