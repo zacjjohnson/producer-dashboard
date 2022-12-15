@@ -14,9 +14,33 @@ const Navigation = () => {
 
     return (
         <div className='navigation'>
-            <Link to='/' className='nav-links'>
-                HOME
-            </Link>
+                <Link to='/' className='nav-links'>
+                    HOME
+                </Link>
+            
+            {!isLoggedIn && (
+            <>
+
+
+                <Link to='/about' className='nav-links'>
+                    ABOUT
+                </Link>
+
+                <Link to='/music' className='nav-links'>
+                    MUSIC
+                </Link>
+                
+                <Link to='/contact' className='nav-links'>
+                    CONTACT
+                </Link>
+
+                
+                {/* <Link to='/login' className='nav-links'>
+                    SIGN IN
+                </Link> */}
+
+            </>
+            )}
 
             {isLoggedIn && (
             <>
@@ -25,26 +49,18 @@ const Navigation = () => {
             </Link>
 
             <Link to='/profile' className='nav-links'>
-                    PROFILE
-                </Link>
+                PROFILE
+            </Link>
 
-            <button onClick={logOutUser}>Logout</button>
+            {/* <Link to='/signup' className='nav-links'>
+                SIGN UP
+            </Link> */}
+
+            <button className='nav-links' onClick={logOutUser}>Logout</button>
             
             </>
             )}
 
-            {!isLoggedIn && (
-            <>
-                <Link to='/signup' className='nav-links'>
-                SIGN UP
-                </Link>
-                
-                <Link to='/login' className='nav-links'>
-                    SIGN IN
-                </Link>
-
-            </>
-            )}
         </div>
     )
 }

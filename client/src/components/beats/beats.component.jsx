@@ -52,7 +52,7 @@ function Beats() {
         axios.post(`${API_URL}/beats`, requestBody)
         .then((response) => {
             console.log(response)
-            navigate('/');
+            navigate('/beats')
             resetBeatsFromDropbox();
 
         }).catch((error) => {
@@ -91,7 +91,7 @@ function Beats() {
         onChange={handleChange}
         />
         <br></br>
-        <button>Create Beat</button>
+        <button className='create-beat-button'>Create Beat</button>
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 

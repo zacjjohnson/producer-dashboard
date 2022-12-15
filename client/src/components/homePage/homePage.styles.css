@@ -1,7 +1,17 @@
 .home-page {
     display: flex;
     flex-direction: row;
+    padding: 2rem;
+}
 
+.home-page img {
+    width: 50vw;
+    border-radius: 2px;
+}
+
+.home-page .name {
+    width: 100vw;
+    font-size: 50px;
 }
 
 .homepage-content-box {

@@ -49,47 +49,44 @@ const HomePage = () => {
         const { name, location } = user;
         console.log(name, location);
         return (
+            <>
             <div className="home-page">
-                <div className='homepage-content-box'>
 
-                {isLoggedIn && (
-                    <>
-                    <div className='image'>
-                        <img src={profileImage} alt="profile" />
-                    </div>
-                    <h3>{name}</h3>
-                    <p>{location}</p>
-                    <p>Artists worked with:</p>
-                    <Artist artists={artistsWorkedWith} />
+                <div className='name'>
+                    <h1>Writa Beats</h1>
                     
-                    </>
-                )}
                 </div>
-    
-    
-                <div className='homepage-image'>
+                <div className='main-image'>
 
-                {/* <img src="https://i.imgur.com/Pco2vPH.jpg" title="source: imgur.com"  alt=''/> */}
+                    <img src='https://i.imgur.com/WAvRbPQ.jpg' alt='profileimage'></img>
+
+                </div>
+            
+    
+            
             </div>
-            </div>
+
+            </>
         )
     } else {
         return (
             <>
             <div className="home-page">
-                <div className='homepage-content-box'>
 
-                {!isLoggedIn && (
-                    <>
-                    <h1>Please Login to upload your information</h1>
-                    </>
-                )}
+                <div className='name'>
+                    <h1>Writa Beats</h1>
+                    <h2>Producer</h2>
+                    <h4>Orlando, Fl</h4>
+
                 </div>
-    
-            <div className='homepage-image'>
+                <div className='main-image'>
 
-                {/* <img src="https://i.imgur.com/Pco2vPH.jpg" title="source: imgur.com" /> */}
-            </div>
+                    <img src='https://i.imgur.com/WAvRbPQ.jpg' alt='profileimage'></img>
+
+                </div>
+            
+    
+            
             </div>
 
             </>

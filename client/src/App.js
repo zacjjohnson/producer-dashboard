@@ -11,6 +11,9 @@ import { AuthContext } from './context/auth.context';
 import IsPrivate from './components/IsPrivate';
 import IsAnon from './components/IsAnon';
 import Profile from './components/profile/profile.component';
+import About from './components/about/about.component';
+import Contact from './components/contact/contact.component';
+import Music from './components/music/music.component';
 
 
 
@@ -18,10 +21,7 @@ import Profile from './components/profile/profile.component';
 
 function App() {
 
-  const { isLoggedIn, user } = useContext(AuthContext);
-   
-
-
+  
   useEffect(() => {
     axios.get('http://localhost:5005/api')
     .then((response) => {
@@ -34,13 +34,7 @@ function App() {
   return (
     
     <div className="App">
-      {/* {!isLoggedIn && (
-        <h1 className='main-head-container'>Producer Dashboard</h1>
-      )}
-
-      {isLoggedIn && (
-        <h1 className='main-head-container'>{user.name} Dashboard</h1>
-      )} */}
+      
         <Navigation />
       <Routes>
           <Route 
@@ -56,6 +50,18 @@ function App() {
           <Route 
           path='/profile'
           element={ <IsPrivate> <Profile /> </IsPrivate> } />
+
+          <Route
+          path='/about'
+          element={ <IsAnon> <About /> </IsAnon>} />
+
+          <Route
+          path='/contact'
+          element={ <IsAnon> <Contact /> </IsAnon>} />
+
+          <Route
+          path='/music'
+          element={ <IsAnon> <Music /> </IsAnon>} />
       </Routes>
       
     <Routes>

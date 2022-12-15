@@ -14,9 +14,7 @@ const Profile = () => {
         const requestBody = { user: user._id };
         axios.post(`${API_URL}/profile`, requestBody)
         .then((response) => {
-
-            console.log({HHHHHHHHHH: response})
-            console.log(response.data)
+            console.log(response)
         })
         .catch(error => {
             console.log(error);

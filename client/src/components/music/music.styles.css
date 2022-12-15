@@ -1,0 +1,40 @@
+.music-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.music-left-page {
+    width: 50vw;
+    font-size: 30px;
+}
+
+.music-right-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin: 1rem;
+
+}
+
+.onsale-beats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 2rem;
+}
+
+.onsale-beats button {
+    padding-top: 2rem;
+}
+
+.onsale-beats audio {
+    padding-top: 1rem;
+}
+
+li {
+    margin: 10px;
+}

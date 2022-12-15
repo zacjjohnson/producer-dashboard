@@ -19,6 +19,15 @@ button {
     text-decoration: none;
     background-color: transparent;
     border: 0px solid;
-    font-size: large;
+    font-size: 25px;
     font-family: 'Roboto', sans-serif;
 }
+
+/* .nav-links  button{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 25px;
+    
+} */

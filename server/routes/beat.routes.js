@@ -17,8 +17,10 @@ router.post('/beats', (req, res, next) => {
               return;
           }
 
+          let slicedName = name.substring(0, name.length - 4);
+
           // Create a new beat
-          return Beat.create({ name, link });
+          return Beat.create({ name: slicedName, link });
       })
       .then((createdBeat) => {
           // Get the beat ID from the created beat

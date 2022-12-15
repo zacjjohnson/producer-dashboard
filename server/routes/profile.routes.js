@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bodyParser = require('body-parser');
-const Beat = require("../models/User.model");
+const Beat = require("../models/Beat.model");
 const User = require("../models/User.model");
 
 

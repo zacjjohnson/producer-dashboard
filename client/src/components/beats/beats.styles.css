@@ -6,7 +6,7 @@
     background-color: white;
     color: #0060FF;
     border-radius: 3px;
-    width: 15vw;
+    width: 250px;
     height: 5vw;
     padding: 1rem;
 }
@@ -22,7 +22,7 @@
     justify-content: center;
     width: 100vw;
     align-items: center;
-    padding-top: 20rem;
+    padding-top: 5rem;
 }
 
 .beats-info-boxes {
@@ -45,4 +45,35 @@
     border: 1px solid black;
     border-radius: 2px;
     
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 10px;
+    width: 500px;
+    height: 2rem;
+}
+
+.create-beat-button {
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+    background-color: white;
+    color: black;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.dropbox-button {
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+    background-color: white;
+    color: black;
+    font-size: 1.1em;
+    margin-top: 15px;
 }
