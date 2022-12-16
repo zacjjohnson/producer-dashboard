@@ -7,20 +7,21 @@ const Beat = require("../models/Beat.model")
 
 router.post('/beats', (req, res, next) => {
   const { name, link } = req.body;
+  
 
   // Check if the beat name already exists
   Beat.findOne({name})
       .then((foundName) => {
+
 
           if (foundName) {
               res.status(400).json({ message: "Beat name already exists." });
               return;
           }
 
-          let slicedName = name.substring(0, name.length - 4);
 
           // Create a new beat
-          return Beat.create({ name: slicedName, link });
+          return Beat.create({ name, link });
       })
       .then((createdBeat) => {
           // Get the beat ID from the created beat

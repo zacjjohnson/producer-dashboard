@@ -14,6 +14,7 @@ import Profile from './components/profile/profile.component';
 import About from './components/about/about.component';
 import Contact from './components/contact/contact.component';
 import Music from './components/music/music.component';
+import Cart from './components/cart/cart.component';
 
 
 
@@ -62,6 +63,10 @@ function App() {
           <Route
           path='/music'
           element={ <IsAnon> <Music /> </IsAnon>} />
+
+          <Route
+          path='/cart'
+          element={ <IsAnon> <Cart /> </IsAnon>} />
       </Routes>
       
     <Routes>

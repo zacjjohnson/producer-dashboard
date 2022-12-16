@@ -1,17 +1,24 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../context/auth.context";
 import axios from "axios";
+import Cart from "../cart/cart.component";
 import '../music/music.styles.css'
+import { createContext } from 'react';
 const API_URL = 'http://localhost:5005';
 
+export const CartContext = createContext({
+  cartItems: [],
+  setCartItems: () => {}
+});
+
+console.log(CartContext)
 
 const Music = () => {
-
     
     const [ beats, setBeats ] = useState([]); 
     const [ cartItems, setCartItems ] = useState([]);  
     
-    
+    console.log(cartItems)
     
     useEffect(() => {
         
@@ -23,9 +30,10 @@ const Music = () => {
 
 
 
-
+    
     return (
         <>
+        <CartContext.Provider value={{ cartItems, setCartItems }}>
         <div className="music-title-text">
                 <h1>Purchase the soundtrack to your next big single</h1>
             </div>
@@ -36,10 +44,11 @@ const Music = () => {
             </div>
 
             <div className="music-right-page">
-                <h3></h3>
+                
                 {beats.map(beat => (
-                        <div className="for-sale-beat-container">
+                    <div className="for-sale-beat-container">
                         <li className="onsale-beats" key={beat._id}>
+                            
                             <h3>{beat.name}</h3>
                             <audio controls>
                                 <source src={beat.link} type="audio/wav"/>
@@ -50,16 +59,7 @@ const Music = () => {
                     ))}
             </div>
         </div>
-                <h3>Cart</h3>
-                    {cartItems.map(item => (
-                    <li>{item.name}</li>
-                    ))}
-                    {cartItems.map(item => (
-                     <li>
-                    {item.name}
-                    <button onClick={() => setCartItems(cartItems.filter(i => i !== item))}>Remove</button>
-                    </li>
-                    ))}
+        </CartContext.Provider>    
         </>
     )
 }

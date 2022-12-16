@@ -34,6 +34,10 @@ const Navigation = () => {
                     CONTACT
                 </Link>
 
+                <Link to='/cart' className='nav-links'>
+                    CART
+                </Link>
+
                 
                 {/* <Link to='/login' className='nav-links'>
                     SIGN IN
