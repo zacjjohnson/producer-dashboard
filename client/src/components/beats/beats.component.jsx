@@ -4,7 +4,7 @@ import './beats.styles.css';
 import dropboxLogo from '../../assets/Dropbox_Icon.svg.png';
 import { useState, useContext } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/auth.context';
 
 
@@ -17,18 +17,16 @@ function Beats() {
     name: '',
     link: '',
   };
+
+
     const { user, storedToken } = useContext(AuthContext); 
     const [ beatsFromDropbox, setBeatsFromDropbox ] = useState(defaultFormFields);
     const [ errorMessage, setErrorMessage ] = useState(undefined);
-    const navigate = useNavigate();
-    const { name, link} = beatsFromDropbox;
+    const { name, link } = beatsFromDropbox;
 
-    // axios.get(`${API_URL}/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}`} }).then((result) => {
-    //   console.log(result)
-    // })
 
     const resetBeatsFromDropbox = () => {
-      beatsFromDropbox(defaultFormFields);
+      setBeatsFromDropbox(defaultFormFields);
     };
 
     // ======= Dropbox Call ================
@@ -52,7 +50,7 @@ function Beats() {
         axios.post(`${API_URL}/beats`, requestBody)
         .then((response) => {
             console.log(response)
-            navigate('/beats')
+            // navigate('/beats')
             resetBeatsFromDropbox();
 
         }).catch((error) => {
@@ -101,31 +99,6 @@ function Beats() {
             Choose from Dropbox
           </button>
         </div>
-
-
-
-
-
-
-
-
-
-      <div className="display-beats">
-        
-        {/* <div className='beats-info-boxes'>
-          <div className='beat-box'>
-
-          <h3>Name of Beat Here</h3>
-          <audio 
-            controls 
-            src='https://dl.dropboxusercontent.com/1/view/z2pq2cg3l5hf0hw/Artists/ZAYH/NEW%20BEATS/WRITA%20BEATS/%20.wav'></audio>
-          <button className='add-to-cart'>Add to Cart</button>
-          </div>
-        </div> */}
-      </div>
-      
-        
-      
       </>
     )
   }

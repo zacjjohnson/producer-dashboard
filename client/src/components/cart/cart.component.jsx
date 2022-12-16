@@ -1,16 +1,11 @@
 import { useContext } from "react";
-import { CartContext } from "../music/music.component";
+import { CartContext } from "../../context/cart.context";
 
 
 
 
 const Cart = () => {
-    const { cartItems, setCartItems } = useContext(CartContext);
-
-  const removeFromCart = (beat) => {
-    setCartItems(cartItems.filter((item) => item !== beat));
-  }
-console.log(cartItems)
+  const { cartItems, removeFromCart } = useContext(CartContext);
 
   return (
     <div>
