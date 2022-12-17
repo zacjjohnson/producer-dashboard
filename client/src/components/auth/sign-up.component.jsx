@@ -94,14 +94,14 @@ const SignUp = () => {
                     onChange={handleChange} 
                     />
     
-                    <button type='submit'>Sign In</button>
+                    <button type='submit'>Sign Up</button>
                 </form>
     
 
         </div>
 
             <p>Already have account?</p>
-            <Link to={"/login"}> Login</Link>
+            <Link to={"/login"}>Login</Link>
         </>
 
     )
