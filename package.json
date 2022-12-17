@@ -1,39 +1,6 @@
 {
-  "name": "project-3",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zacjjohnson/producer-dashboard.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zacjjohnson/producer-dashboard/issues"
-  },
-  "homepage": "https://github.com/zacjjohnson/producer-dashboard#readme",
-
-
-
-
-  "version": 2,
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "client/build" }
-    },
-    {
-      "src": "server/package.json",
-      "use": "@now/node"
-    }
-  ],
-  "routes": [
-    { "src": "/.*", "dest": "client/build/index.html" },
-    { "src": "/api/.*", "dest": "server/index.js" }
-  ]
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm run build"
+  }
 }
