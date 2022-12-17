@@ -63,4 +63,12 @@
 
   .contact-page form {
     border-radius: 2px;
-  }
+}
+
+.sign-up-container input,
+.sign-up-container button,
+.input-form-message {
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}

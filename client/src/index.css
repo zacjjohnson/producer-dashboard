@@ -16,3 +16,15 @@ code {
 .main-head-container {
   color: black;
 }
+
+Link {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgrey;
+}

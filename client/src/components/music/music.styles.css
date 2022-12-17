@@ -28,7 +28,16 @@
 }
 
 .onsale-beats button {
+    margin: auto;
     padding-top: 2rem;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+    background-color: white;
+    color: black;
+    font-size: 1.1em;
+    margin-top: 15px;
 }
 
 .onsale-beats audio {
