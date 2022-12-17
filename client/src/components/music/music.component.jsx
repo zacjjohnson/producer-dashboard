@@ -42,6 +42,7 @@ const Music = () => {
                 <div className="for-sale-beat-container">
                   <li className="onsale-beats" key={beat._id}>
                     <h3>{beat.name}</h3>
+                    <h4>${beat.price}</h4>
                     <audio controls>
                       <source src={beat.link} type="audio/wav"/>
                     </audio>

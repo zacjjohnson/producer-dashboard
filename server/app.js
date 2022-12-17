@@ -35,6 +35,8 @@ app.use('/', contactRoute);
 const musicRoute = require('./routes/music.routes');
 app.use('/', musicRoute);
 
+const purchaseRoute = require('./routes/purchase.routes');
+app.use('/', purchaseRoute);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

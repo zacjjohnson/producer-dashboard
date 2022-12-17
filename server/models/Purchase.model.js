@@ -6,9 +6,12 @@ const purchaseSchema = new Schema(
     price: {
       type: Number
     },
-    product: {
-      type: String
-    },
+    product: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Product"
+      },
+    ],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

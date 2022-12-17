@@ -8,6 +8,9 @@ const beatSchema = new Schema(
     },
     link: {
       type: String
+    },
+    price: {
+      type: Number
     }
   },
   {

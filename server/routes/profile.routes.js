@@ -34,6 +34,33 @@ router.get('/profile', (req, res, next) => {
         res.json({beats: beats});
       }
     });
+
+    router.delete('/users/:id', (req, res) => {
+      const userId = req.params.id;
+    
+      User.findByIdAndDelete(userId, (error, user) => {
+        if (error) {
+          return res.status(500).json({ error: error.message });
+        }
+        if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+        }
+        res.json({ message: 'User deleted successfully' });
+      });
+    });
+
+    router.put('/users/:id', (req, res) => {
+      const userId = req.params.id;
+      const { name, location } = req.body;
+    
+      User.findByIdAndUpdate(userId, { name, location }, (error, updatedUser) => {
+        if (error) {
+          // handle error
+          return res.status(500).send(error);
+        }
+        res.send(updatedUser);
+      });
+    });
 });
 
 module.exports = router;

@@ -16,13 +16,14 @@ function Beats() {
   const defaultFormFields = {
     name: '',
     link: '',
+    price: ''
   };
 
 
     const { user, storedToken } = useContext(AuthContext); 
     const [ beatsFromDropbox, setBeatsFromDropbox ] = useState(defaultFormFields);
     const [ errorMessage, setErrorMessage ] = useState(undefined);
-    const { name, link } = beatsFromDropbox;
+    const { name, link, price } = beatsFromDropbox;
 
 
     const resetBeatsFromDropbox = () => {
@@ -46,7 +47,7 @@ function Beats() {
    
     const handleBeatSubmit = (event) => {
       event.preventDefault();
-      const requestBody = { name, link, user: user._id };
+      const requestBody = { name, link, price, user: user._id };
         axios.post(`${API_URL}/beats`, requestBody)
         .then((response) => {
             console.log(response)
@@ -86,6 +87,14 @@ function Beats() {
         name='link'
         value={link}
         placeholder='Link to Audio'
+        onChange={handleChange}
+        />
+        <br></br>
+        <input
+        type='number'
+        name='price'
+        value={price}
+        placeholder='Price'
         onChange={handleChange}
         />
         <br></br>

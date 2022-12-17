@@ -17,6 +17,7 @@ function CartContextWrapper(props) {
   // Create the value for the context
   const cartContextValue = {
     cartItems,
+    setCartItems,
     addToCart,
     removeFromCart
   };
